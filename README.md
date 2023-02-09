@@ -15,3 +15,5 @@ when run, it does x, y and z
 * Read domain list from somewhere else (crowd sourced list?)
 * Allow wildcards in domain list
 
+Test minor change
+
