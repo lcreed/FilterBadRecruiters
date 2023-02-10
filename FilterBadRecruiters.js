@@ -28,10 +28,8 @@ for (var i = 0; i < threads.length; i++) {
         thread.addLabel(label);
         // thread.markRead();
         // thread.moveToArchive();
-        // added next line to test
         GmailApp.moveThreadToSpam(thread);
         logs.push("Subject: " + thread.getFirstMessageSubject());
-        // Utilities.sleep(1000);
       }
     }
   }
