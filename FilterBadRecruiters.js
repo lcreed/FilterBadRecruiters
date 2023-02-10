@@ -39,5 +39,5 @@ if (logs.length > 0) {
   Logger.log("The following threads were moved to the # SusSpam/BadRecruiter label, maoved to spam, and logged:");
   Logger.log(logs.join("\n"));
 } else {
-  Logger.log("No threads were moved to the # SusSpam/BadRecruiter label, moved to spam, and logged.");
+  Logger.log("No threads were moved to the # SusSpam/BadRecruiter label, moved to spam, or logged.");
 }
