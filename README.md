@@ -9,11 +9,24 @@ data about installing here
 
 when run, it does x, y and z
 
+## New Features
+
+
+| Date |Update  |
+| ------ | ------ |
+| 2/9/2023 |Implemented read of domain list from external site  |
+
+
+
 ## Future Plans
 
 * Reply with canned response
-* Read domain list from somewhere else (crowd sourced list?)
 * Allow wildcards in domain list
 
-Test minor change
 
+
+## Buy me a tea
+
+| Paypal |Others  |
+| ------ | ------ |
+| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | something here
