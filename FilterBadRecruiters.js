@@ -1,6 +1,8 @@
-// this is version 3 .  
-// modified script to read domains from text file in git repo.  
-// easy for someone to create their own list and update the script to point to it
+// this is version 4  
+// modified script to get canned response and reply to all matches
+// easy for someone to create their own list / canned response and update the script to point to it
+// to do: variable-ize the filenames fetched
+
 
 function DumpBadRecruiter2Spam() {
   var response = UrlFetchApp.fetch("https://raw.githubusercontent.com/lcreed/FilterBadRecruiters/main/BadRecruiters.txt");
@@ -9,6 +11,8 @@ function DumpBadRecruiter2Spam() {
 }
 
 var domains = DumpBadRecruiter2Spam().split("\n");
+var cannedResponse = UrlFetchApp.fetch("https://raw.githubusercontent.com/lcreed/FilterBadRecruiters/main/BadRecruiterReply.txt");
+
 
 var label = GmailApp.getUserLabelByName("# SusSpam/BadRecruiter");
 if (!label) {
@@ -26,6 +30,7 @@ for (var i = 0; i < threads.length; i++) {
     for (var k = 0; k < domains.length; k++) {
       if (from.indexOf(domains[k]) !== -1) {
         thread.addLabel(label);
+        message.reply(cannedResponse);
         // thread.markRead();
         // thread.moveToArchive();
         GmailApp.moveThreadToSpam(thread);
@@ -35,6 +40,7 @@ for (var i = 0; i < threads.length; i++) {
   }
 }
 
+// should turn the label into a variable. 
 if (logs.length > 0) {
   Logger.log("The following threads were moved to the # SusSpam/BadRecruiter label, maoved to spam, and logged:");
   Logger.log(logs.join("\n"));
