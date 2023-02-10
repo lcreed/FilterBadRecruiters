@@ -90,6 +90,7 @@ function moveThreadsToSusSpam() {
       'zodiac-solutions.com'
   ]; // list of domains to filter
 
+
   var label = GmailApp.getUserLabelByName("# SusSpam/BadRecruiter");
   if (!label) {
     label = GmailApp.createLabel("# SusSpam/BadRecruiter");
