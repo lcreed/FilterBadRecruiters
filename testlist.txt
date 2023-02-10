@@ -6,17 +6,17 @@ ampcus.com
 applabsystems.com
 artech.com
 artechinfo.com
-avanciers.com // added 2/8/23
+avanciers.com
 bravensinc.com
 canopusitsolution.com
 ceipal.com
 clifyx.com
 clouddestinations.com
 compunnel.com
-consultreellc.com  // added 2/7/23
+consultreellc.com
 corpbizsolutions.com
 cynetsystems.com
-denkensolutions.com // added 2/6/23
+denkensolutions.com
 diamondpick.com
 diversant.com
 diverselynx.com
@@ -25,7 +25,7 @@ emonics.com
 enterprisesolutioninc.com
 eteaminc.com
 exaways.com
-expediteinc.com // added 2/8/23
+expediteinc.com
 futransolutions.com
 genesis10.com
 georgiait.com
@@ -34,10 +34,10 @@ gttit.com
 hanstaffing.com
 harveynash.com
 hiretalent.com
-ibusinesssolution.com //added 2/7/23
+ibusinesssolution.com
 iconma.com
 idctechnologies.com
-imcsgroup.net  // added 2/8/23
+imcsgroup.net
 insigmainc.com
 intelliswift.com
 mastechdigital.com>
@@ -45,7 +45,7 @@ mindtree.com
 msrcosmos.com
 navitassols.com
 net2source.com
-nlbtech.com // added 2/6/23
+nlbtech.com 
 norwintechnologies.com
 nttdata.com
 pamten.com
@@ -71,7 +71,7 @@ techaffinity.com
 techdigitalcorp.com
 techgene.com
 tekfortune.com
-thedignify.com  // added 2/8/23
+thedignify.com
 tridentconsultinginc.com
 ubsolutions.com
 usgrpinc.com
@@ -80,6 +80,6 @@ v2soft.com
 vastika.com
 vbeyond.com    
 vdartinc.com
-veteranssourcinggroup.com  // added 2/8/23
+veteranssourcinggroup.com
 vitsus.com
-zodiac-solutions.com'
+zodiac-solutions.com
