@@ -20,8 +20,9 @@ when run, it does x, y and z
 
 ## Future Plans
 
-* Reply with canned response
 * Allow wildcards in domain list
+* Turn the path to fetched files into a variable to make it easier to change for other users
+* Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script
 
 
 
