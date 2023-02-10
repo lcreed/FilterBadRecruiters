@@ -15,7 +15,7 @@ when run, it does x, y and z
 | Date |Update  |
 | ------ | ------ |
 | 2/9/2023 |Implemented read of domain list from external site  |
-
+| 2/10/2023 | Added canned reply |
 
 
 ## Future Plans
