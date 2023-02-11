@@ -49,7 +49,7 @@ Note: If you're looking for a list of domains that are UK specific, check out th
 *h/t [alaneyue](https://infosec.exchange/@alaneyue)*  
 
 
-* [spammy-recruiters](githuburlhttps://github.com/drcongo/spammy-recruiter)
+* [spammy-recruiters](https://github.com/drcongo/spammy-recruiter)
 
 There are already several solutions I've run across on github for attempting to tackle this issue.  Here are some other resources you might be interested in:  
 
