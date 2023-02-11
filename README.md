@@ -20,7 +20,7 @@ This works with Google's GMail account and the Gmail API.  If you don't use Gmai
 8. Click the save project icon.   
 ![Example!](./media/saveProject.png)  
 
-The script is now implemented in your Google Workspace.  You can now modify it to use your own canned response or filter list or use mine.  When you are ready to test the script, click the Run icon.  The first time you run the script you will be prompted to authorize it to access your Gmail data.  Before authorizing any script, read through it to determine what it will be doing.  For this script, you can review the workflow portion below and match it to the actual javascript.
+The script is now implemented in your Google Workspace.  You can modify it anyway you choose including to use your own canned response / filter list or use mine.  When you are ready to test the script, click the Run icon.  The first time you run the script you will be prompted to authorize it to access your Gmail data.  Before authorizing any script, read through it to determine what it will be doing.  For this script, you can review the workflow portion below and match it to the actual javascript.
 
 To authorize,
 1. Click Review permissions
@@ -54,7 +54,7 @@ when run, it does x, y and z
 | 2/10/2023 | Added canned reply |
 
 
-## Future PlansClean ceiling fan when needed (There is a ladder behind the door.)
+## Future Plans
 
 * Allow wildcards in domain list
 * Turn the path to fetched files into a variable to make it easier to change for other users
