@@ -1,49 +1,29 @@
 # FilterBadRecruiters
-Google Apps Script to send junk recruiter email to spam 
+Google Apps Script to send junk recruiter email that lands in your gmail account to spam 
 
-## How to Install
+I get dozens of messages a day in my GMail inbox from 3rd party recruiters trying to persuade me to send a "fresh" copy of my resume.  When they do include a job description, its often laughably out of line with my skills and experience.  At most these incompetent spammers find a match on a single word and decide I belong in the group of however many people they're going to send the JD to.  Sometimes I ask them what the pay rate it and its always less than what I was making as a contractor in 2012.  Often these "opportunities" require you to be physically present in an office at least a few days a week.  Not one email in the last two years from a third party recruiter has been a job I was interested in.  I realized I was wasting time every day reviewing what they sent, looking for some magic treasure that never appeared.  I started trying to figure out how to get rid of this spam.  
 
-### Prerequisites
-This works with Google's GMail account and the Gmail API.  If you don't use Gmail, this script will do nothing for you.
+Initially I followed the message's procedure every time to unsubscribe.  I noticed quite a few of the senders used a common mail site (jobopportunityforyou.com).  My guess is recruiters can pay to use this email list.  Unsubscribing has ZERO effect.  I have probably unscribed from net2source spam alone more than a dozen times and it still comes almost daily. 
 
-### Implementation
+Next I tried creating filters in Gmail itself.  Their filters have some pros and cons.  The pro is they are instant and process mail as soon as it arrives.  The cons include not being able to flag a message as spam, and having to create multiple filters because the sheer number of domains that need to be blocked exceed the string list.  Its just a pain.  
 
-1. Navigate to the following link from your browser:  [Google App Scripts Home](https://script.google.com/home)  
-2. Click the New Project button  
-3. Open a second tab on your browser and navigate to the [FilterBadRecruiters raw JS page](https://raw.githubusercontent.com/lcreed/FilterBadRecruiters/main/FilterBadRecruiters.js) on Github  
-4. Copy the entire contents of the raw java script tab onto the clipboard 
-5. Switch back to your Apps Script tab and select all the text in the body of the editor
-6. Paste the contents of the clipboard into the apps script editor. This should completely replace the previous contents with the new script.  
-![Example!](./media/newPaste.png)  
-7. Click on the Untitled Project name at the top of the page and give your new project a name before clicking Rename.  
-![Example!](./media/renameProject.png) 
-8. Click the save project icon.   
-![Example!](./media/saveProject.png)  
+I wanted something that would flag a message as spam so that it will hopefully hit the Google algorithm that would result in these problem recruiter's email domains being flagged as spam for everyone.  As a nice to have, I wanted to be able to reply with a GFY whenever they did message me.  This repo is how I solved my problem.  
 
-The script is now implemented in your Google Workspace.  You can modify it anyway you choose including to use your own canned response / filter list or use mine.  When you are ready to test the script, click the Run icon.  The first time you run the script you will be prompted to authorize it to access your Gmail data.  Before authorizing any script, read through it to determine what it will be doing.  For this script, you can review the workflow portion below and match it to the actual javascript.
-
-To authorize,
-1. Click Review permissions
-2. Choose your Google sign in account
-3. Because the copy you pasted isn't verified by Google, you will need to click the advanced link and then the link to Go to your project name.
-4. Click Allow
-
-The script will then run and flag as spam any messages from the current domain lists.  You can find these messages in your spam folder.
-
-In order to setup the script to run automatically, you'll need to create a trigger.  
-
-### Create a Trigger to run the script on a schedule
-
-*Note:  Unfortunately I can find no way to trigger the script to run when new mail arrives.  Google also restricts how many times the script can run in specific periods.*  
-
-To prevent issues, my trigger is set to run the script every hour.  To replicate that setup, click the Trigger icon that looks like an alarm clock.  
-![Trigger Icon](./media/triggerIcon.png)  
-In the lower right corner of the screen, click the Add Trigger button.  The default dialog will appear.  If you want the script to run hourly, simply click the save button.
-
+## Implementation
+[Install Procedure](./Install.md)
 
 ## Workflow
 
-when run, it does x, y and z
+1. Fetches a file that contains a list of domains to be marked as spam from an external location.  (Github in the case of the default version of this script).
+2. Fetches a file that contains a custom response message into a variable called *cannedResponse*. 
+3. Splits the contents of the file by line and populates a variable array called domains.
+4. Sets a label variable and creates the label in the user's Gmail account if it doesn't exist.  This label is set on all messages that come from one of the *domains*.  It is intended to be used as a refernce when reviewing your spam folder to determine what messages were placed there as a result of this actions of this script.
+5.  Searches all the mail using the specified criteria, default is arrived in the last 7 days, and processes all messages that match.  
+6. Checks all the matching messages from the previous step to see if they are sent from one of the domains listed in the domains variable.  If matched, the script executes the following actions on the message
+* Add the specified label
+* Send the canned response via a reply
+* Mark the message as spam
+* Write the subject line of the message to the scripts log output.
 
 ## New Features
 
@@ -61,9 +41,25 @@ when run, it does x, y and z
 * Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script
 
 
+## License
+The contents of this repository are furnished free for anyone's personal use forever.  I welcome feedback and will happily add any relevant domains you have to the [bad recruiter list](./BadRecruiters.txt).  
+
+## Additional Sources
+Note: If you're looking for a list of domains that are UK specific, check out this repository  
+*h/t [alaneyue](https://infosec.exchange/@alaneyue)*
+
+* [spammy-recruiters](githuburlhttps://github.com/drcongo/spammy-recruiter)
+
+There are already several solutions I've run across on github for attempting to tackle this issue.  Here are some other resources you might be interested in:  
+
+* [Detect Recruiter Spam](https://blog.waleedkhan.name/detect-recruiter-spam/)
+* [recruiter-spam](https://github.com/jceloria/recruiter-spam)
+* [gmailctl-recruiter-filter](https://github.com/skyzyx/gmailctl-recruiter-filter)
+
+
 
 ## Buy me a tea
 
-| Paypal |Others  |
+| Paypal |Direct to my bank account  |
 | ------ | ------ |
-| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | something here
+| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | Account # BR549
