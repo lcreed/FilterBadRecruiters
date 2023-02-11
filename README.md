@@ -32,9 +32,9 @@ The script will then run and flag as spam any messages from the current domain l
 
 In order to setup the script to run automatically, you'll need to create a trigger.  
 
-### Create a Triggre to run the script on a schedule
+### Create a Trigger to run the script on a schedule
 
-Note:  Unfortunately I can find no way to trigger the script to run when new mail arrives.  Google also restricts how many times the script can run in specific periods.  
+*Note:  Unfortunately I can find no way to trigger the script to run when new mail arrives.  Google also restricts how many times the script can run in specific periods.*  
 
 To prevent issues, my trigger is set to run the script every hour.  To replicate that setup, click the Trigger icon that looks like an alarm clock.  
 ![Trigger Icon](./media/triggerIcon.png)  
