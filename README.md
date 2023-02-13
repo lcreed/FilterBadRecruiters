@@ -61,6 +61,6 @@ There are already several solutions I've run across on github for attempting to 
 
 ## Buy me a tea
 
-| Paypal |Direct to my bank account  |
+| Paypal |BMAC  |
 | ------ | ------ |
-| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | Account # BR549
+| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | <a href="https://www.buymeacoffee.com/DigitalLaura" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
