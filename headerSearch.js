@@ -5,7 +5,9 @@
 // banned list, the script will move new domains using these sites to spam
 function searchInbox() {
     var searchTerms = ["jobopportunityforyou", "ceipalmm","ceipal","bullhornmail"]; // List of search terms
-    var threads = GmailApp.getInboxThreads();
+    // var threads = GmailApp.getInboxThreads();
+    // var threads = GmailApp.search('is:unread -in:spam');
+    var threads = GmailApp.search('-in:spam after:' + new Date(new Date().getTime() - 365 * 24 * 60 * 60 * 1000).toISOString());
   
     for (var i = 0; i < threads.length; i++) {
       var messages = threads[i].getMessages();
