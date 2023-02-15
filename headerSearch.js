@@ -26,8 +26,9 @@ function searchInbox() {
   
         // If the message contains at least one search term, log the entire message to the console
         if (messageFound) {
-          Logger.log("Found message with search term(s) in thread " + threads[i].getId() + ", message " + message.getId() + ":");
-          Logger.log(messageData);
+          var messageLines = messageData.split("\n");
+          var logMessage = messageLines.slice(0, 20).join("\n");
+          Logger.log(logMessage);
         }
       }
     }
