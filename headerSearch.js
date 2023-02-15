@@ -4,7 +4,7 @@
 // eventually may integrate this into the master script so even if a domain isn't in the 
 // banned list, the script will move new domains using these sites to spam
 function searchInbox() {
-    var searchTerms = ["jobopportunityforyou", "ceipalmm"]; // List of search terms
+    var searchTerms = ["jobopportunityforyou", "ceipalmm","ceipal","bullhornmail"]; // List of search terms
     var threads = GmailApp.getInboxThreads();
   
     for (var i = 0; i < threads.length; i++) {

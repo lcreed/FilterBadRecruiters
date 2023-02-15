@@ -4,7 +4,8 @@ I do not accept any communications from your agency.  In the past, you have spam
 
 Any messages with the following domains referenced in the headers will be automatically added to the list of banned domains:
 
-* ceipalmm.com
+* bullhornmail.com
+* ceipalmm.com / ceipal.com
 * jobopportunityforyou.com
 
 Have a great day.
