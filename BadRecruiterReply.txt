@@ -6,6 +6,7 @@ Any messages with the following domains referenced in the headers will be automa
 
 * bullhornmail.com
 * ceipalmm.com / ceipal.com
+* jobdivabk.com
 * jobopportunityforyou.com
 
 Have a great day.
