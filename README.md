@@ -32,13 +32,14 @@ I wanted something that would flag a message as spam so that it will hopefully h
 | ------ | ------ |
 | 2/9/2023 |Implemented read of domain list from external site  |
 | 2/10/2023 | Added canned reply |
+| 2/20/2023 | Changed some var names to make it more readable.  Also reworked so it would be easier for others to modify things for their own use. Cleaned up log output. |
 
 
 ## Future Plans
 
 * Allow wildcards in domain list
-* Turn the path to fetched files into a variable to make it easier to change for other users
-* Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script
+* ~~Turn the path to fetched files into a variable to make it easier to change for other users~~
+* ~~Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script~~
 
 
 ## License
