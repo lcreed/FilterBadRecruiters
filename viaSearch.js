@@ -26,6 +26,7 @@ function searchEmails() {
             var subject = message.getSubject();
             Logger.log("Email address: " + from + ", Subject: " + subject);
             break;
+            // should also add new label to the mail from the vias so they can be easily spotted
           }
         }
       }
