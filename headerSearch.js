@@ -4,10 +4,10 @@
 // eventually may integrate this into the master script so even if a domain isn't in the 
 // banned list, the script will move new domains using these sites to spam
 function searchInbox() {
-    var searchTerms = ["jobopportunityforyou", "ceipalmm","ceipal","bullhornmail","jobdivabk.com"]; // List of search terms
+    var searchTerms = ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva"]; // List of search terms
     // var threads = GmailApp.getInboxThreads();
     // var threads = GmailApp.search('is:unread -in:spam');
-    var threads = GmailApp.search('-in:spam after:2020');
+    var threads = GmailApp.search('after:2022');
   
     for (var i = 0; i < threads.length; i++) {
       var messages = threads[i].getMessages();
@@ -29,6 +29,7 @@ function searchInbox() {
           var messageLines = messageData.split("\n");
           var logMessage = messageLines.slice(0, 20).join("\n");
           Logger.log(logMessage);
+          Logger.log(messages.getFirstMessageSubject);
         }
       }
     }

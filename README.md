@@ -38,6 +38,7 @@ I wanted something that would flag a message as spam so that it will hopefully h
 ## Future Plans
 
 * Allow wildcards in domain list
+* After searching new messages looking for matching known domains and message does not match from the list, also check headers to see if it was sent via a known spam domain.  If found, notify there is a new domain that needs to be added to the BadRecruiters list.  Wondering if there is a way to automate this opening a repo issue or alternatively email the recipient(s) that this domain needs to be added.
 * ~~Turn the path to fetched files into a variable to make it easier to change for other users~~
 * ~~Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script~~
 
