@@ -9,4 +9,6 @@ Any messages with the following domains referenced in the headers will be automa
 * jobdivabk.com
 * jobopportunityforyou.com
 
-Have a great day.
+
+**Your company made the list:**  
+[Open Source Software for reporting incompetent recruiters as spam](https://github.com/lcreed/FilterBadRecruiters)
