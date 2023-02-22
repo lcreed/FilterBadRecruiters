@@ -26,6 +26,9 @@ function searchEmails() {
             var tome = message.getTo();
             var subject = message.getSubject();
             Logger.log(tome + " Email address: " + from + ", Subject: " + subject);
+            // this next line prints out the received part of the header which i think contains the via domain
+            // should be able to just search this section for a match
+            Logger.log(message.getHeader('Received'));
             break;
             // should also add new label to the mail from the vias so they can be easily spotted
           }

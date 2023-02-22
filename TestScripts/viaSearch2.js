@@ -3,7 +3,7 @@ function searchEmailsAndSendResults() {
     var searchStrings = ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva"];
     
     // Search for emails received in the last 7 days
-    var threads = GmailApp.search('newer_than:7d');
+    var threads = GmailApp.search('newer_than:1h');
     
     // Initialize an empty results string
     var results = "";
