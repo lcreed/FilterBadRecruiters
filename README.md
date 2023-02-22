@@ -19,11 +19,12 @@ I wanted something that would flag a message as spam so that it will hopefully h
 3. Splits the contents of the file by line and populates a variable array called domains.
 4. Sets a label variable and creates the label in the user's Gmail account if it doesn't exist.  This label is set on all messages that come from one of the *domains*.  It is intended to be used as a refernce when reviewing your spam folder to determine what messages were placed there as a result of this actions of this script.
 5.  Searches all the mail using the specified criteria, default is arrived in the last 7 days, and processes all messages that match.  
-6. Checks all the matching messages from the previous step to see if they are sent from one of the domains listed in the domains variable.  If matched, the script executes the following actions on the message
+6. Checks all the matching messages from the previous step to see if they are sent from one of the domains listed in the domains variable or if the content of the message contains a via domain.  If matched, the script executes the following actions on the message
     * Add the specified label
     * Send the canned response via a reply
     * Mark the message as spam
-    * Write the subject line of the message to the scripts log output.
+    * Log message details to the scripts log output.
+    * optionally sends email with report if matches are found
 
 ## New Features
 Hit the Watch button to be notified of updates.
