@@ -26,19 +26,22 @@ I wanted something that would flag a message as spam so that it will hopefully h
     * Write the subject line of the message to the scripts log output.
 
 ## New Features
-
+Hit the Watch button to be notified of updates.
 
 | Date |Update  |
 | ------ | ------ |
 | 2/9/2023 |Implemented read of domain list from external site  |
 | 2/10/2023 | Added canned reply |
 | 2/20/2023 | Changed some var names to make it more readable.  Also reworked so it would be easier for others to modify things for their own use. Cleaned up log output. |
+| 2/22/2023 | Improved logging and added functionality to allow email reports on matches at the user discretion.  Added checks for headers containing the via domains.  Via domain matches will go to spam and be reported.  |
+
+Issue:  Any messages containing one of the via domain strings anywhere in the message will go to spam.  This is why I used a different label so they can be easily identified.
 
 
 ## Future Plans
 
 * Allow wildcards in domain list
-* After searching new messages looking for matching known domains and message does not match from the list, also check headers to see if it was sent via a known spam domain.  If found, notify there is a new domain that needs to be added to the BadRecruiters list.  Wondering if there is a way to automate this opening a repo issue or alternatively email the recipient(s) that this domain needs to be added.
+* ~~After searching new messages looking for matching known domains and message does not match from the list, also check headers to see if it was sent via a known spam domain.  If found, notify there is a new domain that needs to be added to the BadRecruiters list.  Wondering if there is a way to automate this opening a repo issue or alternatively email the recipient(s) that this domain needs to be added.~~
 * ~~Turn the path to fetched files into a variable to make it easier to change for other users~~
 * ~~Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script~~
 
