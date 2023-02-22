@@ -137,7 +137,7 @@ if (ViaSpamCheckResults.length > 0) {
    var resultsFound = (RecruiterSpamCheckResults || ViaSpamCheckResults);
    var reportRequested = (recipient.length > 1 && getReportEmail == 1);  
    if (resultsFound && reportRequested ) {
-      body = + RecSpamHeader + resultsRecruiterSpamCheckResults + viaSpamHeader + ViaSpamCheckResults;
+      body = + RecSpamHeader + RecruiterSpamCheckResults + viaSpamHeader + ViaSpamCheckResults;
       GmailApp.sendEmail(recipient, subject, body);
    }
 
