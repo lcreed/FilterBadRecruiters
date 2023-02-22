@@ -99,6 +99,7 @@ for (var i = 0; i < threads.length; i++) {
     }
     // Get the raw content of the message
     var rawContent = message.getRawContent(); 
+    // logic is bad, the screen for via domains needs to happen as an else after the domains are checked above.  Fix tonight
 
     // Loop through each search string
     for (var m = 0; m < viaDomains.length; m++) {
