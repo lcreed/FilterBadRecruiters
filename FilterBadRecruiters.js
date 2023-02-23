@@ -21,7 +21,8 @@
   // This label is applied to mail from via domains that are from agencies NOT in the known bad recruiter list
   newbadRecruiterMsgLabel = "# SusSpam/NewBadRecruiter";
 
-  // Variable to hold list of known spam mailing lists sold to other companies
+  // Variable to hold list of known spam mailing lists sold to other companies.  Also contains other strings  
+  // found in unwanted email
   // i.e. via spam
   viaDomains = ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva","monsterspam"];
 
