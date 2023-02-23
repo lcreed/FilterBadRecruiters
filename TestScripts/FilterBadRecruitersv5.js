@@ -1,4 +1,4 @@
-// this is version 23.2.22a  
+// this is version 23.2.22b  
 // source repository: https://github.com/lcreed/FilterBadRecruiters
 // the new version implements search for mail sent via known mailing list providers
 // and improves logging and reporting
@@ -37,8 +37,8 @@
   getReportEmail = "0";
 
   // These vars are used if email reporting is enabled
-  // recipient = ""; // Replace with the email address of the recipient
-  recipient = "laura.creed@gmail.com";
+  recipient = ""; // Replace with the email address of the recipient
+
   subject = "Search Results";
   RecSpamHeader = "The following messages from known bad recruiters were found:\n\n";
   viaSpamHeader = "\n\nThe following messages were received from known via domains and are from domains not currently in the known bad recruiter list:\n\n"
@@ -94,28 +94,30 @@ for (var i = 0; i < threads.length; i++) {
         // thread.moveToArchive();
         GmailApp.moveThreadToSpam(thread);
         RecruiterSpamCheckResults += "From: " + message.getFrom() + ", Subject: " + message.getSubject();
+        break;  
         // logs.push("From: " + message.getFrom() + ", Subject: " + message.getSubject() + "BCC List: " + message.getBCC() );
-      }
-    }
-    // Get the raw content of the message
-    var rawContent = message.getRawContent(); 
+      } else {
+        // Get the raw content of the message
+        var rawContent = message.getRawContent(); 
+        // logic is bad, the screen for via domains needs to happen as an else after the domains are checked above.  Fix tonight
 
-    // Loop through each search string
-    for (var m = 0; m < viaDomains.length; m++) {
-      var viaDomain = viaDomains[m];
-          
-      // If the search string is found in the raw content of the message, add the sender email address and subject line to the results string
-      if (rawContent.indexOf(viaDomain) !== -1) {
-        var from = message.getFrom();
-        var subject = message.getSubject();
-        thread.addLabel(label2);
-        message.reply(cannedResponse);
-        GmailApp.moveThreadToSpam(thread);
-        ViaSpamCheckResults += "Email address: " + from + ", Subject: " + subject + "\n";
-        break;
+        // Loop through each search string
+        for (var m = 0; m < viaDomains.length; m++) {
+          var viaDomain = viaDomains[m];
+              
+          // If the search string is found in the raw content of the message, add the sender email address and subject line to the results string
+          if (rawContent.indexOf(viaDomain) !== -1) {
+            var from = message.getFrom();
+            var subject = message.getSubject();
+            thread.addLabel(label2);
+            message.reply(cannedResponse);
+            GmailApp.moveThreadToSpam(thread);
+            ViaSpamCheckResults += "Email address: " + from + ", Subject: " + subject + "\n";
+            break;
+          }
+        }
       }
     }
-   
   }
 }
 
@@ -137,7 +139,7 @@ if (ViaSpamCheckResults.length > 0) {
    var resultsFound = (RecruiterSpamCheckResults || ViaSpamCheckResults);
    var reportRequested = (recipient.length > 1 && getReportEmail == 1);  
    if (resultsFound && reportRequested ) {
-      body = + RecSpamHeader + resultsRecruiterSpamCheckResults + viaSpamHeader + ViaSpamCheckResults;
+      body = + RecSpamHeader + RecruiterSpamCheckResults + viaSpamHeader + ViaSpamCheckResults;
       GmailApp.sendEmail(recipient, subject, body);
    }
 
