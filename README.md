@@ -34,9 +34,7 @@ Hit the Watch button to be notified of updates.
 | 2/9/2023 |Implemented read of domain list from external site  |
 | 2/10/2023 | Added canned reply |
 | 2/20/2023 | Changed some var names to make it more readable.  Also reworked so it would be easier for others to modify things for their own use. Cleaned up log output. |
-| 2/22/2023 | Improved logging and added functionality to allow email reports on matches at the user discretion.  Added checks for headers containing the via domains.  Via domain matches will go to spam and be reported.  |
-
-Issue:  Any messages containing one of the via domain strings anywhere in the message will go to spam.  This is why I used a different label so they can be easily identified.
+| 2/22/2023 | ~~Improved logging and added functionality to allow email reports on matches at the user discretion.  Added checks for headers containing the via domains.  Via domain matches will go to spam and be reported.~~ Backed out change due to some new issues.  |
 
 
 ## Future Plans
