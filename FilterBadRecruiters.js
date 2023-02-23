@@ -23,7 +23,7 @@
 
   // Variable to hold list of known spam mailing lists sold to other companies
   // i.e. via spam
-  viaDomains = ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva"];
+  viaDomains = ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva","monsterspam"];
 
   // searchRange variable - this defines the range of time to search your messages.  I.e. only search messages received in the last week 
   // or the last year or last hour.  The default is the last seven days.  The reason for this default is if the domain is added to the list
