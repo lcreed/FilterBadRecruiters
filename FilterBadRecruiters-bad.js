@@ -51,6 +51,7 @@ function DumpBadRecruiter2Spam() {
   // Retrieve the list of bad recruiter domains 
   var getDomainList = UrlFetchApp.fetch(domainListURL);
   var badRecruiterDomains = getDomainList.getContentText();
+  // var newVar = badRecruiterDomains.filter(Boolean);
   return badRecruiterDomains;
 }
 
