@@ -26,6 +26,9 @@ I wanted something that would flag a message as spam so that it will hopefully h
     * Log message details to the scripts log output.
     * optionally sends email with report if matches are found
 
+## Known Issues
+A blank line in the bad recruiters list causes ALL mail in the search range to match and be flagged as spam.  I am going to rewrite the code from scratch this week and include a filter to remove blank entries and entries less than 5 characters from the domains array.  
+
 ## New Features
 Hit the Watch button to be notified of updates.
 
