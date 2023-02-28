@@ -6,3 +6,6 @@ amigainformatics.com
 amiseq.com
 
  xya 
+ true
+ false
+ 999
