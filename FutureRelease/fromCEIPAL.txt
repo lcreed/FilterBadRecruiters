@@ -1,0 +1,211 @@
+Original Message
+Message ID	<20230228165933.cc72574f61d9ebf1@mg3.ceipalmm.com>
+Created at:	Tue, Feb 28, 2023 at 10:59 AM (Delivered after 27 seconds)
+From:	Mohit K <mohit@otomashen.com>
+To:	laura.creed@gmail.com
+Subject:	Backfill Position WebSphere MQ Admin role C2C fine
+SPF:	PASS with IP 159.135.236.219 Learn more
+DKIM:	'PASS' with domain mg3.ceipalmm.com Learn more
+
+
+Download Original	Copy to clipboard
+Delivered-To: laura.creed@gmail.com
+Received: by 2002:adf:dd8c:0:0:0:0:0 with SMTP id x12csp2783438wrl;
+        Tue, 28 Feb 2023 09:00:00 -0800 (PST)
+X-Google-Smtp-Source: AK7set/8oN9gAL5GLfTAUd7SxrClQ8APQ16+pDYqwk0mPOVWF3RpbojUgj9LVedRj/FVPJEf6gvp
+X-Received: by 2002:a05:6214:c46:b0:56e:941d:a4b3 with SMTP id r6-20020a0562140c4600b0056e941da4b3mr6501657qvj.7.1677603600026;
+        Tue, 28 Feb 2023 09:00:00 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1677603600; cv=none;
+        d=google.com; s=arc-20160816;
+        b=wc3tiMJMgVID6tCpbSCyGW3ykYMWvfQu6TF6sFhbJ24dTGP1UKnt3Z7ytccLaVijTT
+         Io0qk9vIP1l6DllZ4+uvjK8/mYAZPlYgDw2orJHzrGu8Crbio5eMTbcOL8iFlo/pOonY
+         EzoiHsdKHW1hozZKbMspq7DS8RIWGPthLSFGmBnD2HmCeOUIasYEUCZvSEsoR2zMtuJH
+         e13unpR/x+i+LXsKq6lZmFGW55r6Eo39AUzRTaNwLa9JPFAiSjnk8NrBnxNsNegFFo6Q
+         QAll3w6OSofkqJjzOlWY3eDN75kKQPLDjXHsTCY+qnrNHJnUr9QuPuTdGQkex/Bod+tR
+         ACHA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=content-transfer-encoding:message-id:reply-to:list-unsubscribe:to
+         :from:subject:mime-version:date:dkim-signature:dkim-signature;
+        bh=eaxKg84sUbDPFAAF1yY+PprOEEvuzjfwERPwaUdlWZI=;
+        b=YPHeTHpEPeLkAHJRMflLDOA0p7VEJgwchJTLt60iKzpgdYfjKO7ICtcsq/Aqp8GhZb
+         Az9Zaj7dPHYszMMzjA/4iTk26BTpeLifKvWwHZfjxRWADTqBTU0oFO6T0N4GBsyH4f1w
+         I46YGb/BJ8sXLKwxm60GY8WuVFJW3pUoydE32VAzMeYR19MJXWCzU4cFxVSrfPmWqV70
+         fNPz59HOigLqPdKqZDvOCV4dwprLwp6MvJicyPJkor1nBZzUIvPK0WJdpmOtqzbXqzjB
+         gokhBsn6Izt80o5FK/75ItPm5xurFPO94+eecP+g+QINA/DpGRX3KB+V5MIIFbDIUdX8
+         Dd+g==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@mg3.ceipalmm.com header.s=krs header.b=p1TYsz5x;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=a+n8Wd8v;
+       spf=pass (google.com: domain of bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com designates 159.135.236.219 as permitted sender) smtp.mailfrom="bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com"
+Return-Path: <bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com>
+Received: from m236-219.mailgun.net (m236-219.mailgun.net. [159.135.236.219])
+        by mx.google.com with UTF8SMTPS id o2-20020a0cf4c2000000b0056c1810dc9bsi8482713qvm.331.2023.02.28.08.59.57
+        for <laura.creed@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 28 Feb 2023 09:00:00 -0800 (PST)
+Received-SPF: pass (google.com: domain of bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com designates 159.135.236.219 as permitted sender) client-ip=159.135.236.219;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@mg3.ceipalmm.com header.s=krs header.b=p1TYsz5x;
+       dkim=pass header.i=@mailgun.org header.s=mg header.b=a+n8Wd8v;
+       spf=pass (google.com: domain of bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com designates 159.135.236.219 as permitted sender) smtp.mailfrom="bounce+dab1a4.31393b-laura.creed=gmail.com@mg3.ceipalmm.com"
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mg3.ceipalmm.com; q=dns/txt; s=krs; t=1677603593; x=1677610793; h=Content-Transfer-Encoding: Content-Type: Message-Id: Reply-To: List-Unsubscribe: To: To: From: From: Subject: Subject: Mime-Version: Date: X-Feedback-Id: Sender; bh=eaxKg84sUbDPFAAF1yY+PprOEEvuzjfwERPwaUdlWZI=; b=p1TYsz5xQ3L7SwBZOEyN3+wAauihNedaxzih/vTG+QEiGIi16eVn9soqgRFMaPAsI2Bx0Lzk qgbxtlArl9jG32ldw/AbtrWjZAdw8rITcgaVPDhdWQL0kDKYrgmVW24bmLHbUI82d/c1JEoa peXaKV7h77wXmmS5RJJCn+y7fSA=
+DKIM-Signature: a=rsa-sha256; v=1; c=relaxed/relaxed; d=mailgun.org; q=dns/txt; s=mg; t=1677603593; x=1677610793; h=Content-Transfer-Encoding: Content-Type: Message-Id: Reply-To: List-Unsubscribe: To: To: From: From: Subject: Subject: Mime-Version: Date: X-Feedback-Id: Sender; bh=eaxKg84sUbDPFAAF1yY+PprOEEvuzjfwERPwaUdlWZI=; b=a+n8Wd8vTgCrHNoiTKmm/EjVegbPRaTN5CeG61OUj6+7LrdvIQWrJk0DEgcz/7O05W8tC4TQ 6oQ3nj+AelbGn5fKM+wOckYkrtfROzA+6YKFcj0gs4T/afqDqpzLPTjy6cFG7eeipQ5gHIca TA3ZBzMBR4UV7T8gl501cWKajno=
+X-Feedback-Id: postmaster@mg3.ceipalmm.com:2023-02-28:5d3f6020c94d414f846ddeef:mailgun
+X-Mailgun-Sending-Ip: 159.135.236.219
+X-Mailgun-Sid: WyJjYjg2YyIsImxhdXJhLmNyZWVkQGdtYWlsLmNvbSIsIjMxMzkzYiJd
+Received: from <unknown> (<unknown> []) by 0bab57327484 with HTTP id 63fe32fc932166f351b5e951; Tue, 28 Feb 2023 16:59:33 GMT
+X-Mailgun-Batch-Id: 63fe32f53642f494db8bff0f
+Date: Tue, 28 Feb 2023 16:59:33 +0000
+Mime-Version: 1.0
+Subject: Backfill Position WebSphere MQ Admin role C2C fine
+From: Mohit K <mohit@otomashen.com>
+To: laura.creed@gmail.com
+X-Mailgun-Tag: 2023-02-28
+X-Mailgun-Rewrite-Sender-Header: false
+List-Unsubscribe: "https://unsubscribe.otomashen.com/users/request_unsubscribe/b763d80c01429cb138566f841defbf1698ac4764/d3fb4af7bcd95f4bfad89cdbe95b8d3653b73073/SFM1U3FXcEpya2gxUFN6ZmpacS9DSnhscGZTQ3VmdFkvazR0VVJMWlpkYz0="
+Reply-To: mohit@otomashen.com
+X-Mailgun-Variables: {"ref_id": "17698"}
+Message-Id: <20230228165933.cc72574f61d9ebf1@mg3.ceipalmm.com>
+Content-Type: text/html; charset="ascii"
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CEIPAL ATS - Simplified Recruiting and Staffing</title>
+</head>
+
+<body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0">
+        <div style="width:100%; overflow:auto; float:left; margin: auto;">
+        <table cellpadding="0" cellspacing="0" border="0" style="width:100%; min-width:300px;">
+                        <tr>
+                <td style=" border:none;">
+                	<table cellpadding="0" cellspacing="0" style="width:100%; min-width:280px; margin:0 auto; border:none;">
+                        <tr>
+                            <td style="font-family: calibri,sans-serif !important; font-size:15px !important; color:#333 !important; line-height:22px; border:none;">
+                                <div><span style="font-size:12px;">Hello&nbsp;Laura&nbsp;Creed</span></div>
+
+<div>&nbsp;</div>
+
+<div>
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">We have an urgent job opportunity for WebSphere MQ Admin.Please let me know if you or someone you may know be interested in this opportunity.</span></span></span></p>
+
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Role &ndash; WebSphere MQ Admin </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Location - Princeton, NJ or Quincy, MA </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Web Interview </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Long Term Duration</span></span></span></p>
+
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Job description for Messaging</span></span></span></p>
+
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Technologies involved </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">MQ 6, 7, 7.5, 8, 9, 9.2 </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">MQ internal, external, and shared hubs. </span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">IR360</span></span></span></p>
+
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Experience with installation, maintenance, and support of WebSphere MQ on distributed platforms</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Installation of MQ with HA and Clustering using SAN/NAS/NFS storages with load balancing concept</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Provide MQ administrations support to multiple applications on different platforms in Hybrid Cloud Domain. Should be capable to collaborate with the current Infrastructure & middleware team.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Modify/re-design configuration/applications to resolve identified issues.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Manage, configure and monitor MQ Listeners, Command Servers, Channel initiators, Trigger Monitors, MQ Log files , RQD & Dead Letter Queues</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Setup of IBM Websphere MQ in a cluster environment for both load balancing and Failover.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">IBM Websphere MQ best practices for setup/monitoring as well as usage.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Provide impact analysis of newer versions and provide upgrade paths and plan and upgrade servers with the appropriate versions and patches of IBM Websphere MQ</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Setup security (SSL, TLS, Encryption, Certificates etc.) on the Websphere MQ servers as well as the queues and applications that access Websphere MQ.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Strong knowledge to create a message hub(external/internal) with endpoints and policies over MQTT.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Should have knowledge on implementing MQ security using OAM and SSL</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Must be proficient in the writing/editing of UNIX shell scripts.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Should have experience of the middleware technologies used along with MQ (for ex. WAS, JBoss etc)</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Handle Technical Escalations received from (SSL, TLS, Encryption, Certificates etc.)</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Create SOPs ensuring compliance to Service Level Agreements (SLA) and train internal teams</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Troubleshoot High Severity incidents & Provide RCA</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Collaborate with internal customers/leading MQ Series standup/migration projects for internal organizations and handling MQ/Custom client installations</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Knowledge of various Broker MQ objects such as Queues, Channels, Clustered Queues, etc.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Vast knowledge on MQ Clustering, PUB/SUB, Exits, API, and Client access architectures</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Advantage having knowledge on configuration, troubleshooting, optimization of ActiveMQ, Apache Kafka brokers and RabbitMQ.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Should have strong knowledge on MQ Backup and Recovery processes</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Should have strong knowledge on any of the MQ monitoring product like BMC True sight, Tivoli, IBM&nbsp; Infrared 360 , etc</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Participated in MQ Disaster Recovery exercise on various platforms/environments.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Strong debugging and problem-solving skills with excellent understanding of system development methodologies, techniques and tools</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Demonstrated initiative to recommend process improvements and demonstrated creative thinking</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Experience implementing or overseeing the implementation of all MQ objects</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Strong interpersonal skills, as well as excellent communication skills, verbal and written to both technical and non-technical audiences</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Should have sound knowledge in ITIL processes incident management, change management, problem management and request management etc</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Ability to guide / mentor other Administrators and troubleshoot issues</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Providing 24 x 7 supports for all applications to ensure continuous availability.</span></span></span></p>
+
+<p style="margin-bottom:13px">&nbsp;</p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Mohit Kumar</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">M: +1 (732) 339-3945</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">E: mailto: <a href="mailto:Mohit@otomashen.com" style="color:blue; text-decoration:underline">Mohit@otomashen.com</a></span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">Otomashen Technology LLC.</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">1390, Maket street, Suite 200,</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif"">San Francisco, California, US-94102</span></span></span></p>
+
+<p style="margin-bottom:13px"><span style="font-size:11pt"><span style="line-height:115%"><span style="font-family:Calibri,"sans-serif""><a href="https://www.otomashen.com" style="color:blue; text-decoration:underline">https://www.otomashen.com</a></span></span></span></p>
+</div>
+                             </td>
+                        </tr>
+                        <tr>
+                            <td style="font-family: calibri,sans-serif; font-size:14px; line-height:normal; color:#333; border:none">
+                                                           </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+                	</table>
+        <p style="border:none; padding-left:10px; font-size:11px; font-family:Arial, Helvetica, sans-serif; color:#6b6c72; text-align:left; line-height:18px;text-transform: uppercase;"> To unsubscribe from future emails or to update your email preferences <a href="https://unsubscribe.otomashen.com/users/request_unsubscribe/b763d80c01429cb138566f841defbf1698ac4764/d3fb4af7bcd95f4bfad89cdbe95b8d3653b73073/SFM1U3FXcEpya2gxUFN6ZmpacS9DSnhscGZTQ3VmdFkvazR0VVJMWlpkYz0=" style="color:#0077c5; text-decoration:underline"><b> click here </b></a>.</p>    </div>
+<img width="1px" height="1px" alt="" src="http://clicks.mg3.ceipalmm.com/o/eJwdjUkOwyAMAF9TbomwjTEceEvFYlKkoFao_X-jXGekGU3gRbwljmRaIqBIxYyEFskiBvCXoL1WQRbXPbSopcPD2XlcWMcnn3Pu9T3NK4nzuVt27LWC1swohcFKLSE4bmyW9udoCcTHYFY682_lvS7VdgWPmcd5l773frO4YfgDkcUsxw"></body>
+</html>
