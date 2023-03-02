@@ -1,37 +1,38 @@
  
-
+// poached from https://gist.github.com/crates/230b1e10a07424ab2eba87f6199b966d
+// modifying to only search the first message in each thread
+// in testing as of 3/1/2023
+// i don't love this workflow but I think I can integrate the other script.  Issue will be having a bunch of vars outside of the functions
 
 var viaHeaderResults = "";
+// This is the text file that is sent in a reply to those on the bad recruiters domain list
+cannedResponseURL = "https://raw.githubusercontent.com/lcreed/FilterBadRecruiters/main/BadRecruiterReply.txt";
+// retrieve the contents of the canned message and store in a variable
+var cannedResponse = UrlFetchApp.fetch(cannedResponseURL);
 
 function processMessages(thread, label, search) {
   var cache = CacheService.getScriptCache();
 
   var messages = thread.getMessages();
+  var message = messages[0];
 
-  for (var j = 0; j < messages.length; j++) {
-    var message = messages[j];
     var messageId = message.getId();
 
     // Check if message ID is in cache
     if (cache.get(messageId)) {
-      continue; // Skip this message if already processed
+      return; // Skip this message if already processed
     }
 
     var body = message.getRawContent().split('Content-Type:')[0].trim();
 
-    if (typeof search === 'string') { // used for single-string searches:
-      if (body.indexOf(search) > -1) {
-        // none of this block will run as search is an array
-        thread.addLabel(label);
-        cache.put(messageId, 'true', 21600); // Store message ID in cache for 6 hours
-        break;
-      }
-    } else if (Array.isArray(search)) { // search for multiple addresses:
+    if (Array.isArray(search)) { // search for multiple addresses:
       for (var k = 0; k < search.length; k++) {
         if (body.toLowerCase().indexOf(search[k].toLowerCase()) >- 1) {
           thread.addLabel(label);
           viaHeaderResults += "From: " + message.getFrom() + ", Subject: " + message.getSubject() + " Using Via Header: " + search[k] + "\n";
-          // cache.put(messageId, 'true', 21600); // Store message ID in cache for 6 hours
+          cache.put(messageId, 'true', 21600); // Store message ID in cache for 6 hours
+          message.reply(cannedResponse);
+          GmailApp.moveThreadToSpam(thread);
           break;
         }
       }
@@ -39,7 +40,7 @@ function processMessages(thread, label, search) {
     }
 
     Utilities.sleep(50);
-  }
+  //}
 
 }
 
@@ -78,5 +79,11 @@ function filterViaSpam() {
   if (viaHeaderResults.length > 0) {
     Logger.log("The following messages were received from known via domains and are from domains not currently in the known bad recruiter list:");
     Logger.log(viaHeaderResults);
+    recipient = Session.getActiveUser().getEmail();
+    subject = "Bad Recruiters using Via mail lists";
+    viaSpamHeader = "The following messages were received from known via domains and are from domains not currently in the known bad recruiter list:\n\n"
+    repBody = + viaSpamHeader + viaHeaderResults;
+    GmailApp.sendEmail(recipient, subject, repBody);
+
   }
 }

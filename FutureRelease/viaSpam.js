@@ -1,6 +1,7 @@
  
 // poached from https://gist.github.com/crates/230b1e10a07424ab2eba87f6199b966d
-// start with filterViaSpam
+// start with filterViaSpa
+
 
 var viaHeaderResults = "";
 
