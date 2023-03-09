@@ -1,4 +1,4 @@
-function FilterBadRecruiters() {
+function getVars(varName) {
 
   const scriptConfig = {
       // This is the text file that is sent in a reply to those on the bad recruiters domain list.
@@ -10,7 +10,7 @@ function FilterBadRecruiters() {
 
       // This label is applied to the recruiters in the known spammers domain list
       // if it doesn't exist, the script will attempt to create it.
-      badRecruiterMsgLabel: "# SusSpam/BadRecruiter",
+      badRecruiterMsgLabel: "# SusSpam/testing",
 
       // The searchRange variable defines the range of time to search your messages.  I.e. only search messages received in the last week 
       searchRange: "newer_than:7d",
@@ -19,10 +19,10 @@ function FilterBadRecruiters() {
       // ----------------------------------------------------------------------------------------------------------------------
       // These variables apply to messages from recruiters outside of the known bad recruiter domain list
       // These recruiters are using a known mailing list service listed in the viaDomains variable.
-      viaDomains: ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva","monsterspam"],
+      viaDomains: ["jobopportunityforyou", "ceipal","bullhornmail","jobdiva","monsterspam","brassring"],
    
       // This label is applied to mail from via domains that are from agencies NOT in the known bad recruiter list
-      newBadRecruiterMsgLabel: "# SusSpam/NewBadRecruiter",
+      newBadRecruiterMsgLabel: "# SusSpam/testingVia",
   };
 
     // The following variables are only used if email reporting is enabled
@@ -36,7 +36,7 @@ function FilterBadRecruiters() {
     // This line precedes the list of bad recruiter spam messages identified by the script
     knownDomainsHeader: "The following messages from known bad recruiters were found:\n\n",
     // This line precedes the list of spam messages received from via domains and are from agencies NOT in the known bad recruiter list
-    viaDomainsHeader: "\n\nThe following messages were received from known via domains and are from domains not currently in the known bad recruiter list:\n\n"
+    viaDomainsHeader: "\n\nThe following messages were received from known via domains and are from domains not currently in the known bad recruiter list:\n\n"  
   };
 
 
@@ -56,7 +56,7 @@ function FilterBadRecruiters() {
 
 
 
-  Logger.log(badRecruiterDomains);
+ // Logger.log(badRecruiterDomains);
 
   // Logger.log("\nprint knownBadRecruitersLC:\n" + knownBadRecruitersLC[1]);
 
@@ -64,6 +64,7 @@ function FilterBadRecruiters() {
   // things to ensure are checked
   // each recruiter domain is valid and not blank
   // sender email is lowercased and the domain list is lower case function to convert and validate the domain list
+  return varName
 }
 
 function checkForKnownBadRecruiters(message, badRecruiterDomains) {
@@ -93,5 +94,8 @@ function processMessages() {
   //   do the things to the message like apply label, reply, send to spam.  Maybe do this with yet anotehr
   // report here or in a different function?  only have to pass the object name
   // don't forget to add the message id to the cache
+  getVars(badRecruiterDomains);
+  Logger.log(badRecruiterDomains);  
+
 
 }
