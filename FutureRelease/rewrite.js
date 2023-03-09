@@ -65,3 +65,33 @@ function FilterBadRecruiters() {
   // each recruiter domain is valid and not blank
   // sender email is lowercased and the domain list is lower case function to convert and validate the domain list
 }
+
+function checkForKnownBadRecruiters(message, badRecruiterDomains) {
+  // check the message and return true if it contains any of the known bad recruiter domains
+  // return false if it does not contain any of the known bad recruiter domains
+
+}
+
+function checkForNewBadRecruiters(message, viaDomains) {
+  // check the message and return true if it contains any of the known via domains
+  // return false if it does not contain any of the known via domains
+}
+
+function reportResults(message, knownBadRecruitersLC, knownBadRecruiters, newBadRecruitersLC, newBadRecruiters) {
+  // report the results of the script to the email report
+  // email report must be set to true if you want to receive an email report when the script runs and identifies spam  
+}
+
+function processMessages() {
+  // process messages
+  // get script config object
+  // for loop through each thread in the search range and get the first message in the thread
+  // if checkForKnownBadRecruiters(message, badRecruiterDomains) is true then 
+  //   do the things to the message like apply label, reply, send to spam.  Maybe do this with yet anotehr
+  //  function
+  // else checkforNewBadRecruiters(message, viaDomains)
+  //   do the things to the message like apply label, reply, send to spam.  Maybe do this with yet anotehr
+  // report here or in a different function?  only have to pass the object name
+  // don't forget to add the message id to the cache
+
+}
