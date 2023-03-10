@@ -117,9 +117,10 @@ function processMessages() {
   Logger.log(reportConfig);
 
   var logs = [];
-  var RecruiterSpamCheckResults = "";
-  var ViaSpamCheckResults = "";
+  var resultsRecruiterSpamCheck = "";
+  var resultsViaSpamCheck = "";
 
+  
 
   /* ----------------------------------------------------------------------------------------------------------------------
   Pseudo code: 
