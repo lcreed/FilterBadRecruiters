@@ -11,4 +11,5 @@ amiseq.com
 ehub.global
 999
 imdb
-github
+github.edu
+nityo.com
