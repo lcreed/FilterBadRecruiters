@@ -63,9 +63,7 @@ function getConfigVars(varName) {
   throw new Error("Script Config variable not found: " + varName);
   }
 
- // Logger.log(badRecruiterDomains);
 
-}
 
 function getReportVars(varName) {
   
@@ -106,8 +104,7 @@ function getReportVars(varName) {
   throw new Error("Reporting variable not found: " + varName);
   }
 
- // Logger.log(badRecruiterDomains);
-}
+
 
 function checkForKnownBadRecruiters(message, badRecruiterDomains) {
   // check the message and return true if it contains any of the known bad recruiter domains
