@@ -1,0 +1,6 @@
+Bad* export-ignore
+*.yml export-ignore
+media/ export-ignore
+FutureRelease/ export-ignore
+Misc/ export-ignore
+OtherLists/ export-ignore 
