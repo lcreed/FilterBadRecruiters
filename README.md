@@ -1,7 +1,7 @@
 # FilterBadRecruiters
 **Google Apps Script to send junk recruiter email that lands in your gmail account to spam**
 
-***Notice:  There are big changes coming to this script.  A full package release is in testing and should be out before the end of March 2023.  There are a lot of new features and a completely recreated script. ***
+*** Notice:  There are big changes coming to this script.  A full package release is in testing and should be out before the end of March 2023.  There are a lot of new features and a completely recreated script. ***
 
 I get dozens of messages a day in my GMail inbox from 3rd party recruiters trying to persuade me to send a "fresh" copy of my resume.  When they do include a job description, its often laughably out of line with my skills and experience.  At most, these incompetent spammers find a match on a single word and decide I belong in the group of however many people they're going to send the JD to.  Sometimes I ask them what the pay rate is and its always less than what I was making as a contractor in 2012.  Often these "opportunities" require you to be physically present in an office at least a few days a week. Something I'm not willing to do and they never pay relocation anyway. Not one email in the last two years from a third party recruiter has been a job I was interested in.  I realized I was wasting time every day reviewing what they sent, looking for some magic treasure that never appeared.  I started trying to figure out how to get rid of this spam.  
 
