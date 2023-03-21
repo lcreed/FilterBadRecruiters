@@ -1,6 +1,8 @@
 # FilterBadRecruiters
 **Google Apps Script to send junk recruiter email that lands in your gmail account to spam**
 
+***Notice:  There are big changes coming to this script.  A full package release is in testing and should be out before the end of March 2023.  There are a lot of new features and a completely recreated script. ***
+
 I get dozens of messages a day in my GMail inbox from 3rd party recruiters trying to persuade me to send a "fresh" copy of my resume.  When they do include a job description, its often laughably out of line with my skills and experience.  At most, these incompetent spammers find a match on a single word and decide I belong in the group of however many people they're going to send the JD to.  Sometimes I ask them what the pay rate is and its always less than what I was making as a contractor in 2012.  Often these "opportunities" require you to be physically present in an office at least a few days a week. Something I'm not willing to do and they never pay relocation anyway. Not one email in the last two years from a third party recruiter has been a job I was interested in.  I realized I was wasting time every day reviewing what they sent, looking for some magic treasure that never appeared.  I started trying to figure out how to get rid of this spam.  
 
 Initially, I followed the message's procedure every time to unsubscribe.  I noticed quite a few of the senders used a common mail site (jobopportunityforyou.com).  My guess is recruiters can pay to use this email list.  Unsubscribing has ZERO effect.  I have probably unsubscribed from net2source spam more than a dozen times and it still arives daily like the newspapers of yore. 
@@ -8,6 +10,8 @@ Initially, I followed the message's procedure every time to unsubscribe.  I noti
 Next, I tried creating filters in Gmail itself.  Their filters have some pros and cons.  The pro is they are instant and process mail as soon as it arrives.  The cons include not being able to flag a message as spam, and having to create multiple filters because the sheer number of domains that need to be blocked exceed the string list.  Its just a pain.  
 
 I wanted something that would flag a message as spam so that it will hopefully hit the Google algorithm that would result in these problem recruiter's email domains being flagged as spam for everyone.  As a nice to have, I wanted to be able to reply with a [GFY](https://letmegooglethat.com/?q=gfy+acronym) whenever they did message me.  This repo is how I solved my problem.  
+
+![Google Apps Script Gmail Management](https://img.shields.io/badge/Google%20Apps%20Script-Gmail%20Mgmt-orange)
 
 ## Implementation
 [Install Procedure](./Install.md)
@@ -65,10 +69,14 @@ There are already several solutions I've run across on github for attempting to 
 * [gmailctl-recruiter-filter](https://github.com/skyzyx/gmailctl-recruiter-filter)
 
 
+## License
+This automation is free software for personal use.
+
 
 ## Buy me a tea
 
-| Paypal |BMAC  |
-| ------ | ------ |
-| [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=N3F3NR73HUAQJ) | <a href="https://www.buymeacoffee.com/DigitalLaura" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+If you find any of my work useful and would like to send a donation, you can use any of these options:
 
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?logo=paypal&style=for-the-badge)](https://www.paypal.com/donate/?hosted_button_id=N3F3NR73HUAQJ)
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S1JNPTO)
+[![Donate using Liberapay](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/lcreed/donate)
