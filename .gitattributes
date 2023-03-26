@@ -4,3 +4,5 @@ media/ export-ignore
 FutureRelease/ export-ignore
 Misc/ export-ignore
 OtherLists/ export-ignore 
+v0.1/ export-ignore
+TestScripts/ export-ignore
