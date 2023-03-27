@@ -1,4 +1,4 @@
-# How to Install
+# How to Install A Copy of the Script
 
 ## Prerequisites
 This works with Google's GMail account and the Gmail API.  If you don't use Gmail, this script will do nothing for you.
