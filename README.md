@@ -1,78 +1,56 @@
 # FilterBadRecruiters
 
 
-FilterBadRecruiters is a [Google Apps Script](https://developers.google.com/apps-script/) to send junk recruiter email that lands in your gmail account to spam.
+FilterBadRecruiters is a [Google Apps Script](https://developers.google.com/apps-script/) that processes new messages looking for unwanted email from known third party recruiters.  When a match is found, a reply is sent informing the sender that the message is being reported as spam and will not be read. The script then logs matches to a spreadsheet and updates a pie chart displaying what percentage of these type of messages were sent from each domain. 
 
-***Notice:  There are big changes coming to this script.  A full package release is in testing and should be out before the end of March 2023.  There are a lot of new features and a completely recreated script.***
-
-I get dozens of messages a day in my GMail inbox from 3rd party recruiters trying to persuade me to send a "fresh" copy of my resume.  When they do include a job description, its often laughably out of line with my skills and experience.  At most, these incompetent spammers find a match on a single word and decide I belong in the group of however many people they're going to send the JD to.  Sometimes I ask them what the pay rate is and its always less than what I was making as a contractor in 2012.  Often these "opportunities" require you to be physically present in an office at least a few days a week. Something I'm not willing to do and they never pay relocation anyway. Not one email in the last two years from a third party recruiter has been a job I was interested in.  I realized I was wasting time every day reviewing what they sent, looking for some magic treasure that never appeared.  I started trying to figure out how to get rid of this spam.  
-
-Initially, I followed the message's procedure every time to unsubscribe.  I noticed quite a few of the senders used a common mail site (jobopportunityforyou.com).  My guess is recruiters can pay to use this email list.  Unsubscribing has ZERO effect.  I have probably unsubscribed from net2source spam more than a dozen times and it still arives daily like the newspapers of yore. 
-
-Next, I tried creating filters in Gmail itself.  Their filters have some pros and cons.  The pro is they are instant and process mail as soon as it arrives.  The cons include not being able to flag a message as spam, and having to create multiple filters because the sheer number of domains that need to be blocked exceed the string list.  Its just a pain.  
-
-I wanted something that would flag a message as spam so that it will hopefully hit the Google algorithm that would result in these problem recruiter's email domains being flagged as spam for everyone.  As a nice to have, I wanted to be able to reply with a [GFY](https://letmegooglethat.com/?q=gfy+acronym) whenever they did message me.  This repo is how I solved my problem.  
+The script fetches the list of known third party recruiters and the contents of the email reply message from URLs specified in the [script variables](./userVariables.md).  You can easily modify these URLs to point to your own data or use mine.  
 
 ![Google Apps Script Gmail Management](https://img.shields.io/badge/Google%20Apps%20Script-Gmail%20Mgmt-orange)
+## Features
 
-## Implementation
-[Install Procedure](./Install.md)
+* Searches your gmail account for messages that meet the search criteria, looking for sender domain matches against a list of known bad third party recruiters. 
+* Searches the email headers of messages not matched to a known recruiter for a string indicating they were sent "via" a known shotgun approach mailing list service.
+* Applies a label to message(s) that meet the criteria, reports the message(s) that meet the criteria as spam, sends an automatic reply, and outputs details of the message to a reporting spreadsheet,  
+    * The spreadsheet is created if it doesn't exist.
+* Messages that do not match the criteria are cached so they are only checked every six hours.  **However, if the number of new known recruiter domains or via domains change from the last time the script runs, the cache is cleared so that all messages in the search range are checked for the new domains.**
+* The reporting spreadsheet also contains a chart tab where a pie chart displays what percentage of all the logged messages were sent from each domain.
+* The script can easily be customized by changing variables to do things like use a different list of known bad third party recruiters, a different canned reply, or a different search range.  
+* When run, the script creates some variables in the user section of the built in script properties that are specific to your user account.  These properties include the current version of the script you are using and the identifier of the spreadsheet in your Google Drive folder once it has been created.
 
-## Workflow
+## How a Bad Third Party Recruiter is Defined
 
-1. Fetches a file that contains a list of domains to be marked as spam from an external location.  (Github in the case of the default version of this script).
-2. Fetches a file that contains a custom response message into a variable called *cannedResponse*. 
-3. Splits the contents of the file by line and populates a variable array called domains.
-4. Sets a label variable and creates the label in the user's Gmail account if it doesn't exist.  This label is set on all messages that come from one of the *domains*.  It is intended to be used as a refernce when reviewing your spam folder to determine what messages were placed there as a result of this actions of this script.
-5.  Searches all the mail using the specified criteria, default is arrived in the last 7 days, and processes all messages that match.  
-6. Checks all the matching messages from the previous step to see if they are sent from one of the domains listed in the domains variable or if the content of the message contains a via domain.  If matched, the script executes the following actions on the message
-    * Add the specified label
-    * Send the canned response via a reply
-    * Mark the message as spam
-    * Log message details to the scripts log output.
-    * optionally sends email with report if matches are found
+Recruiter domains that send messages matching any of the following criteria qualify for the [Known Bad Recruiter domain list](./data/KnownBadRecruiters.txt):
+
+* Sends unsolicited job postings that clearly do not match your current skills or experience
+* Uses an email service mailing list for spamming thousands of candidates in an attempt to farm resumes.  _These services sometime use names, email addresses and phone nuumbers obtained from an illegal data breach including the ones inflicted on monster.com and LinkedIn._  
+* Asks for editable copies of your resume and sometimes private data like your social security number.
+* Attempts to follow the messages unsubscribe instructions have been futile.
+
+
+## Implementation and Configuration
+
+* [Install the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.
+* [Install Your Own Copy of the Script](./Install_User.md) - This option allows you to  modify the script to use your own criteria.  
+    * [Customizing the Script Configuration](./userVariables.md)
+
 
 ## Known Issues
-A blank line in the bad recruiters list causes ALL mail in the search range to match and be flagged as spam.  I am going to rewrite the code from scratch this week and include a filter to remove blank entries and entries less than 5 characters from the domains array.  
+None as of 3/27/2023
 
 ## New Features
-Hit the Watch button to be notified of updates.
-
-| Date |Update  |
-| ------ | ------ |
-| 2/9/2023 |Implemented read of domain list from external site  |
-| 2/10/2023 | Added canned reply |
-| 2/20/2023 | Changed some var names to make it more readable.  Also reworked so it would be easier for others to modify things for their own use. Cleaned up log output. |
-| 2/22/2023 | ~~Improved logging and added functionality to allow email reports on matches at the user discretion.  Added checks for headers containing the via domains.  Via domain matches will go to spam and be reported.~~ Backed out change due to some new issues.  |
-
+Hit the Watch button to be notified of updates.  This release has been entirely rewritten from the original release.  It includes a number of new error checks and functionality like reporting.
 
 ## Future Plans
 
-* Allow wildcards in domain list
-* ~~After searching new messages looking for matching known domains and message does not match from the list, also check headers to see if it was sent via a known spam domain.  If found, notify there is a new domain that needs to be added to the BadRecruiters list.  Wondering if there is a way to automate this opening a repo issue or alternatively email the recipient(s) that this domain needs to be added.~~
-* ~~Turn the path to fetched files into a variable to make it easier to change for other users~~
-* ~~Turn the label into a variable.  Perhaps make it optional.  Currently used to see what messages were hit by the script~~
-
+* Optional feature: automate submitting domains that aren't in the current known bad recruiter list that are using a "via" domain.  This would probably involve a post of a web form that then updated a spreadsheet.  I could then verify new entries on the sheet and add them to the current list.
+* Optional feature: automatically file Federal Trade Commission complaint on domains that spam a user with more than x number of messages.  
+* Optional feature: Attempt to automatically unsubscribe every time a known domain message is received.  
 
 ## License
-The contents of this repository are furnished free for anyone's personal use forever.  I welcome feedback and will happily add any relevant domains you have to the [bad recruiter list](./BadRecruiters.txt).  
+The contents of this repository are furnished free for personal use.  
 
-## Additional Sources
-Note: If you're looking for a list of domains that are UK specific, check out this repository  
-*h/t [alaneyue](https://infosec.exchange/@alaneyue)*  
-
-
-* [spammy-recruiters](https://github.com/drcongo/spammy-recruiter)
-
-There are already several solutions I've run across on github for attempting to tackle this issue.  Here are some other resources you might be interested in:  
-
-* [Detect Recruiter Spam](https://blog.waleedkhan.name/detect-recruiter-spam/)
-* [recruiter-spam](https://github.com/jceloria/recruiter-spam)
-* [gmailctl-recruiter-filter](https://github.com/skyzyx/gmailctl-recruiter-filter)
-
-
-## License
-This automation is free software for personal use.
+## Feedback
+I welcome feedback and will happily add any relevant domains you have to the [bad recruiter list](./data/KnownBadRecruiters.txt).  
 
 
 ## Buy me a tea

@@ -1,6 +1,6 @@
 # User Variable Guide
 
-The Filter Bad Recruiter script contains a number of variables that can be used to customize its behavior.  The table below describes the purpose of the variables included that can be changed.  Feel free to modify them to suit your needs.  
+The Filter Bad Recruiter script contains a number of variables that can be used to customize its behavior.  The table below describes the purpose of the variables included that can be changed.  Feel free to modify them to suit your needs.  The script will function as is but will use the criteria specified unless you modify the values.
 
 To locate the variables, open the script in your favorite text editor and search for the variable name.  Only change the variable declaration's value.  I.e.  
 _const myVariable = **"this is the value"**_
@@ -19,7 +19,7 @@ These variables are all found in the function getConfigVars
 | urlCannedResponse| URL | URL of a text file that will be used to reply to all matched emails|            
 | urlRecruiterDomains | URL | The URL points to a text file that contains a list of domains for which the script should search. Each line of this file must contain a single domain. I.e. <br> domain1.com<br>domain2.com<br>domain3.com |
 | badRecruiterMsgLabel | BadRecruiterSpam | This label will be applied to all matched messages.  If it doesn't exist in your gmail account, it will be created. |
-| searchRange | "newer_than:7d" | This can be ANY search string that works from your gmail search bar.  I.e. <br>"newer_than:6h"<br>"after:2020 before:202/01/15 in:inbox"  |
+| searchRange | "newer_than:7d" | This can be ANY [valid gmail search string](https://support.google.com/mail/answer/7190).  I.e. <br>"newer_than:6h"<br>"after:2020 before:202/01/15 in:inbox"  |
 | viaDomains | string array | <p>List of strings to search for in the email headers.  The purpose of this is to help identify emails sent by third-party recruiters who use well-known services to send messages to a large number of recipients. Some of these services acquire email lists from data breaches such as Monster.com and LinkedIn.com. Most recruiters who use these services are considered "resume farms." They may request an editable version of your resume and submit it to job openings using someone else's contact information.<p>You can use this list to identify strings that were added to your email address when you signed up for one of these breached sites. For instance, if you registered at Monster as youremail+monsterspam@gmail.com, you can add "monsterspam" to the list of strings to catch emails using that address. However, you should only do this if you do not expect to receive any legitimate emails at that address.  |
 
 ### Variables Used to Configure the Script's Reporting
