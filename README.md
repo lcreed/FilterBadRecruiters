@@ -29,7 +29,7 @@ Recruiter domains that send messages matching any of the following criteria qual
 
 ## Implementation and Configuration
 
-* [Install the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.
+* [Install and Run the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.  You can customize how often the script runs or just run it manually.
 * [Install Your Own Copy of the Script](./Install_User.md) - This option allows you to  modify the script to use your own criteria.  
     * [Customizing the Script Configuration](./userVariables.md)
 
