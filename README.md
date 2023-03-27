@@ -1,5 +1,7 @@
 # FilterBadRecruiters
-**Google Apps Script to send junk recruiter email that lands in your gmail account to spam**
+
+
+FilterBadRecruiters is a [Google Apps Script](https://developers.google.com/apps-script/) to send junk recruiter email that lands in your gmail account to spam.
 
 ***Notice:  There are big changes coming to this script.  A full package release is in testing and should be out before the end of March 2023.  There are a lot of new features and a completely recreated script.***
 
