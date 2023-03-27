@@ -1,8 +1,9 @@
 Bad* export-ignore
-*.yml export-ignore
+FUNDING.yml export-ignore
 media/ export-ignore
+data/ export-ignore
 FutureRelease/ export-ignore
 Misc/ export-ignore
 OtherLists/ export-ignore 
-v0.1/ export-ignore
+PreviousReleases/ export-ignore
 TestScripts/ export-ignore
