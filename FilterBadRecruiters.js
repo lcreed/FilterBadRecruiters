@@ -393,6 +393,16 @@ function reportResults(resultsData) {
 }
 
 
+/**
+ * Processes messages in the user's Gmail inbox and takes actions on any messages
+ * that originate from known bad recruiters or contain certain strings in the message headers.
+ * This function performs the following actions on each message in the user's inbox: 
+ * <ul>
+ *   <li>Checks if the message originated from one of the known bad recruiter domains or contains certain strings in the message headers.</li>
+ *   <li>If the message meets the above criteria, a canned response is sent to the sender, the message is labeled as a bad recruiter message, and the message is moved to the spam folder.</li>
+ *   <li>If the message does not meet the above criteria, the message ID is stored in the script's cache to prevent the message from being processed again.</li>
+ * </ul>
+ */ 
 function processMessages() {
     const scriptConfig = getConfigVars();
     var resultsData = [];
