@@ -54,7 +54,7 @@ I welcome feedback and will happily add any relevant domains you have to the [ba
 
 ## Buy me a tea
 
-If you find any of my work useful and would like to send a donation, you can use any of these options:
+If you find this work useful and would like to send a donation, you can use any of these options:
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg?logo=paypal&style=for-the-badge)](https://www.paypal.com/donate/?hosted_button_id=N3F3NR73HUAQJ)
 [![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/S6S1JNPTO)
