@@ -22,8 +22,9 @@ The script fetches the list of known third party recruiters and the contents of 
 Recruiter domains that send messages matching any of the following criteria qualify for the [Known Bad Recruiter domain list](./data/KnownBadRecruiters.txt):
 
 * Sends unsolicited job postings that clearly do not match your current skills or experience
-* Uses an email service mailing list for spamming thousands of candidates in an attempt to farm resumes.  _These services sometime use names, email addresses and phone numbers obtained from an illegal data breach including the ones inflicted on monster.com and LinkedIn._  
-* Asks for editable copies of your resume and sometimes private data like your social security number.
+* Uses an email service mailing list for spamming thousands of candidates in an attempt to farm resumes.  These companies include jobdivabk.com, ceipalmm.com, and the like.  <br>
+_These services sometime use names, email addresses and phone numbers obtained from an illegal data breach including the ones inflicted on monster.com and LinkedIn._  
+* Asks for editable copies of your resume and sometimes private data like your social security number.  
 * Attempts to follow the messages unsubscribe instructions have been futile.
 
 
