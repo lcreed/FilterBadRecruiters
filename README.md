@@ -30,7 +30,7 @@ _These services sometime use names, email addresses and phone numbers obtained f
 
 * [Install Your Own Copy of the Script](./Install_User.md) - This option allows you to  modify the script to use your own criteria.  
   * [Customizing the Script Configuration](./userVariables.md)
-* [Install and Run the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.  You can customize how often the script runs or just run it manually.
+* [Install and Run the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.  
 
 Note: The public version of the script is only provided for those of you who might want to run it once for whatever reason.  I would never recommend running a shared script over making your own private copy.  The primary reason is you fully control the changes to the script.  If a new version of the script is added later and you want to implement it to get the new functionality, you can always just copy over your existing copy of the script.
 
