@@ -24,26 +24,29 @@ Recruiter domains that send messages matching any of the following criteria qual
 * Uses an email service mailing list for spamming thousands of candidates in an attempt to farm resumes.  These companies include jobdivabk.com, ceipalmm.com, and the like.  
 _These services sometime use names, email addresses and phone numbers obtained from an illegal data breach including the ones inflicted on monster.com and LinkedIn._  
 * Asks for editable copies of your resume and sometimes private data like your social security number.  
-* Attempts to follow the message's unsubscribe instructions have been futile.
+* Attempts to follow the companies unsubscribe instructions have been futile.
 
 ## Implementation and Configuration
 
-* [Install and Run the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.  You can customize how often the script runs or just run it manually.
 * [Install Your Own Copy of the Script](./Install_User.md) - This option allows you to  modify the script to use your own criteria.  
   * [Customizing the Script Configuration](./userVariables.md)
+* [Install and Run the Public version of the script](Install_Public.md) - This option is not editable and will default to the criteria in the Publicly available library version of the script.  User specific details like the identifier of the Google Drive reporting spreadsheet and the caching of your processed messages are only accessible by the script when run by you.  You can customize how often the script runs or just run it manually.
+
+Note: The public version of the script is only provided for those of you who might want to run it once for whatever reason.  I would never recommend running a shared script over making your own private copy.  The primary reason is you fully control the changes to the script.  If a new version of the script is added later and you want to implement it to get the new functionality, you can always just copy over your existing copy of the script.
 
 ## Known Issues
 
-_Coder is a perfectionist_  
-None as of 3/27/2023
+* If your account was around in the Google Buzz/Plus or GChat days, you may still have  these type of messages in your account.  A search range that reaches back far enough may include these messages which the script cannot process as they don't contain the fields it expects.  It turns out to be complicated to create a search of every message in your account that excludes messages that aren't actual email.  It is therefore recommended to not search back more than a couple of years to avoid this issue.  Or to be very specific in the search to only include the inbox or other safe labels.
 
 ## New Features
 
-Hit the Watch button to be notified of updates.  This release has been entirely rewritten from the original release.  It includes a number of new error checks and functionality like reporting.
+This release has been entirely rewritten from the original release.  It includes a number of new error checks and functionality like reporting.  It also caches the messages it examines so on subsequent runs it only processes the messages it hasn't seen before..  The exception to this is when the script identifies a change in the number of recruiter domains or via domains.  If this count changes, the script will clear out all the message id cache and search them all again to verify they aren't from a newly added domain.  
+
+Hit the Watch button to be notified of updates.  
 
 ## Future Plans
 
-* Optional feature: automate submitting domains that aren't in the current known bad recruiter list that are using a "via" domain.  This would probably involve a post of a web form that then updated a spreadsheet.  I could then verify new entries on the sheet and add them to the current list.
+* Optional feature: automate submitting domains that aren't in the current known bad recruiter list that are using a "via" domain.  This would probably involve a post of a web form that then updated a spreadsheet.  I could then verify new entries on the sheet and add them to the current list.  Searching the entire header is more time consuming that just checking the from address for a matching domain so being able to identify those companies using these domains has the advantage of allowing for faster processing.  
 * Optional feature: automatically file Federal Trade Commission complaint on domains that spam a user with more than x number of messages.  
 * Optional feature: Attempt to automatically unsubscribe every time a known domain message is received.  
 

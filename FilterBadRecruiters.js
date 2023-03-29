@@ -72,7 +72,7 @@
         reformatting a field in the spreadsheet 
 
         */
-        // Logger.log(userPropsService.getScriptuserProps().getProperties()); // for debuggings
+        // Logger.log(userPropsService.getScriptuserProps().getProperties()); // for debugging
     } else {
       Logger.log("You are running version " + scriptFBRVersion + " of the script. ");
     }
@@ -141,7 +141,7 @@ function getReportVars() {
           It is handy for troubleshooting and testing but it is advised to leave it set to false.
         - The Header variables are only used in the log output and when email reporting is enabled.
         - The subject variable is only used when email reporting is enabled.
-        - The reportSheedID variable is a pointer to a spreadsheet where a historical record of matches are retained.  The spreadsheet
+        - The reportSheetID variable is a pointer to a spreadsheet where a historical record of matches are retained.  The spreadsheet
           will be accessible by a URL output in the execution log every time the script runs..  You may want to bookmark the URL to review
           what messages have been sent to spam over the lifetime run of this version of the script.
     

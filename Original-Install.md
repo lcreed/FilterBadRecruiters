@@ -1,6 +1,6 @@
 # How to Install A Copy of the Script
 
-https://script.google.com/d/1HO7qKjxYjrOvyfPm6F_mnoItWXHVXxCvFdd24sCCCr5Di7qMqrEQEMIA/edit?usp=sharing
+
 ## Prerequisites
 This Google Apps Script only works with Google's GMail accounts.  If you don't use Gmail, this script will do nothing for you.
 
