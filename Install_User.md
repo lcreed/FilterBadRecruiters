@@ -16,7 +16,7 @@ These steps are only necessary the first time you run the script.
 5. When your review is complete, click the Save button.
 6. Use the dropdown in the menu bar to select the processMessages function.<br>![select processMessages in the dropdown](./media/processMessagesFunction.png "select the processMessages function in the dropdown")
 7. Click the Run button to the left of the processMessages function.
-8. Click the Review Permissions button in the Authorization Required dialog.  ![Click the Review Permissions button](./media/AuthReq.png "Click the Review Permissions button")
+8. Click the Review Permissions button in the Authorization Required dialog.<br>>![Click the Review Permissions button](./media/AuthReq.png "Click the Review Permissions button")
 9. Choose your Google account in the Sign In dialog by clicking it.
 10. The next dialog box states that Google hasn't verified this app and that the app is requesting access to sensitive info in your Google Account. This warning is because the script will be accessing your email and Google Drive account. You should have already reviewed the script to confirm that it is not providing access to your information to anyone but you. If you are comfortable proceeding, click the Advanced link.
 11. Click the Go to link that includes the name you gave your project. ![Script Warning Message](./media/warningMessage.png "Warning message for the script")
