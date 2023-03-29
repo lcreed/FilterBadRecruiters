@@ -14,7 +14,7 @@ These steps are only necessary the first time you run the script.
 ![Rename your project](./media/renameProject.png "Give Your New Project a name")  
 4. After reviewing the document outlining [user variables](./userVariables.md), make whatever changes you want to be in place, i.e., changing the URL to point to a different email response file.
 5. When your review is complete, click the Save button.
-6. Use the dropdown in the menu bar to select the processMessages function.  ![select processMessages in the dropdown](./media/processMessagesFunction.png "select the processMessages function in the dropdown")
+6. Use the dropdown in the menu bar to select the processMessages function.<br>![select processMessages in the dropdown](./media/processMessagesFunction.png "select the processMessages function in the dropdown")
 7. Click the Run button to the left of the processMessages function.
 8. Click the Review Permissions button in the Authorization Required dialog. ![Click the Review Permissions button](./media/AuthReq.png "Click the Review Permissions button")
 9. Choose your Google account in the Sign In dialog by clicking it.
