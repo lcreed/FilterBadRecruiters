@@ -38,9 +38,3 @@ To prevent issues, my trigger is set to run the script every hour.  To replicate
 ![Trigger Icon](./media/triggerIcon.png)  
 In the lower right corner of the screen, click the Add Trigger button.  The default dialog will appear.  If you want the script to run hourly, simply click the save button.
 
-
-| Var Name           | Value | Description                                                                                                        |
-| ------------------|:------|:------------------------------------------------------------------------------------------------------------------|
-| urlCannedResponse  | URL   | URL of a text file that will be used to reply to all matched emails.                                                |            
-| urlRecruiterDomains| URL   | The URL points to a text file that contains a list of domains for which the script should search. Each line of this file must contain a single domain. I.e. domain1.com  domain2.com  domain3.com |
-
