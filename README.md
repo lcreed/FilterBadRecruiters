@@ -1,6 +1,6 @@
 # FilterBadRecruiters
 
-FilterBadRecruiters is a [Google Apps Script](https://developers.google.com/apps-script/) that processes new messages looking for unwanted email from known third party recruiters.  When a match is found, a reply is sent informing the sender that the message is being reported as spam and will not be read. The script then logs matches to a spreadsheet and updates a pie chart displaying what percentage of these type of messages were sent from each domain.  
+FilterBadRecruiters is a [Google Apps Script](https://developers.google.com/apps-script/) that processes new messages looking for unwanted email from [known third party recruiters](./data/KnownBadRecruiters.txt).  When a match is found, a [reply](./data/BadRecruiterReply.txt) is sent informing the sender that the message is being reported as spam and will not be read. The script then logs matches to a spreadsheet and updates a pie chart displaying what percentage of these type of messages were sent from each domain.  
 
 The script fetches the list of known third party recruiters and the contents of the email reply message from URLs specified in the [script variables](./userVariables.md).  You can easily modify these URLs to point to your own data or use mine.  
 ![Google Apps Script Gmail Management](https://img.shields.io/badge/Google%20Apps%20Script-Gmail%20Mgmt-orange)
