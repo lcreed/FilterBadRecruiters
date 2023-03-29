@@ -19,7 +19,7 @@ These steps are only necessary the first time you run the script.
 8. Click the Review Permissions button in the Authorization Required dialog.<br>>![Click the Review Permissions button](./media/AuthReq.png "Click the Review Permissions button")
 9. Choose your Google account in the Sign In dialog by clicking it.
 10. The next dialog box states that Google hasn't verified this app and that the app is requesting access to sensitive info in your Google Account. This warning is because the script will be accessing your email and Google Drive account. You should have already reviewed the script to confirm that it is not providing access to your information to anyone but you. If you are comfortable proceeding, click the Advanced link.
-11. Click the Go to link that includes the name you gave your project. ![Script Warning Message](./media/warningMessage.png "Warning message for the script")
+11. Click the Go to link that includes the name you gave your project.<br> ![Script Warning Message](./media/warningMessage.png "Warning message for the script")
 12. The final dialog lists what permissions you are providing the script. The last permission on the list says "Connect to an external service". This is due to the script performing a urlFetch for two different files from this GitHub repository. Click Allow to complete the authorization process.
 13. You may have to click the Run icon again to run the script. After it runs, you will see output similar to this in the execution logs if no matches are found. (The spreadsheet is not created until a match is found).  
 ![First Run with no match](./media/FirstRun.png "First Run output when no match found")
