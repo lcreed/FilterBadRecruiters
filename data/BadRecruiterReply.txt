@@ -15,6 +15,8 @@ Any messages with the following domain strings referenced in the headers will be
 Your company made the open source list of bad recruiters:  
 https://github.com/lcreed/FilterBadRecruiters
 
-Companies who continue to send unwanted email after the consumer requests to be unsubscribed from their lists can incur penalties from the US Federal Trade Commission.  Each email you send will be reported to the FTC:  
+Your company is in violation of the US CAN-SPAM act and will be reported to the Federal Trade Commission.
+
+https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
 
 https://reportfraud.ftc.gov/#/
