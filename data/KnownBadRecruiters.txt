@@ -47,6 +47,7 @@ hiretalent.com
 ibusinesssolution.com
 iconma.com
 idctechnologies.com
+iic.com
 imcsgroup.net
 insigmainc.com
 intelliswift.com
@@ -54,7 +55,9 @@ intellyk.com
 intonenetworks.com
 itechsolutions.com
 kanandcorp.com
+keasis.com
 lorventech.com
+mamsys.com
 mastechdigital.com
 mindtree.com
 mprogen.com
@@ -71,6 +74,7 @@ oorwindigital.com
 pamten.com
 paramountsoft.net
 plaxonic.com
+purple-search.com
 pyramidci.com
 quantumworld.us
 randstadusa.com
@@ -85,6 +89,7 @@ saxonglobal.com
 servsys.com
 sigconsult.com
 sinyc.com
+skill-bird.com
 smartitframe.co
 softhq.com
 softpath.net
@@ -102,6 +107,7 @@ techaffinity.com
 techdigitalcorp.com
 techgene.com
 tekfortune.com
+thecroxgroup.com
 thedignify.com
 tridentconsultinginc.com
 ubsolutions.com
