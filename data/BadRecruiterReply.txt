@@ -1,6 +1,6 @@
 Greetings,
 
-I do not accept any communications from your agency.  In the past, you have spammed me with messages for jobs that do not line up with my skills and experience. As a result, I do not view your agency as a credible source of employment prospects. This is an automated response to let you know that it has been flagged as spam and deleted without being seen. The same thing will happen to further emails you send. Failing to unsubscribe my email address from your list will continue to have your domain flagged as spam with Google. This will decrease your reach as all mail sent to a gmail subscriber may potentially go directly to spam.
+As I did not give my consent to be added to your mailing list, your company is violating the US CAN-SPAM act. Therefore, I will report this email and any future emails from you to the Federal Trade Commission, your Internet Service Provider, and other relevant agencies that investigate violations and add offenders to email blacklists.
 
 Any messages with the following domain strings referenced in the headers will be automatically added to the list of banned domains:
 
@@ -11,12 +11,11 @@ Any messages with the following domain strings referenced in the headers will be
 * conrep (all associated domains)
 * rediff (all associated domains)
 
-
-Your company made the open source list of bad recruiters:  
-https://github.com/lcreed/FilterBadRecruiters
-
-Because you have either failed to unsubscribe me after I requested to be removed from your mailing list, or because you do not provide a method to opt out of your mailing list, your company is in violation of the US CAN-SPAM act.  This email and all those coming from you in the future will be reported to the Federal Trade Commission, your ISP, and agencies that review violators and add them to email blacklists.
+https://www.spam.org/report
 
 https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
 
 https://reportfraud.ftc.gov/#/
+
+Your company made the open source list of bad recruiters:  
+https://github.com/lcreed/FilterBadRecruiters
