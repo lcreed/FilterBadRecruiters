@@ -1,4 +1,4 @@
-Greetings,
+Dear Sir/Madam,
 
 As I did not give my consent to be added to your mailing list, your company is violating the US CAN-SPAM act. Therefore, I will report this email and any future emails from you to the Federal Trade Commission, your Internet Service Provider, and other relevant agencies that investigate violations and add offenders to email blacklists.
 
@@ -11,11 +11,18 @@ Any messages with the following domain strings referenced in the headers will be
 * conrep (all associated domains)
 * rediff (all associated domains)
 
+I have made numerous formal requests to be unsubscribed from the mailing lists of CEIPAL, JobDiva, and JobOpportunityForYou. Despite my repeated attempts to unsubscribe, I continue to receive emails from your agency through these mailing lists. I would like to remind you that as a user of these lists, you are automatically reported.
+
+In the event that your agency is identified as a user of these lists, I will publish your company name on LinkedIn and other relevant sites. However, if you wish to contact me and provide details on the provider of my personal email/contact details so that I can contact them directly with a cease and desist, I will not publish your details on my abuse posts.
+
+Please note that screen captures verifying the company providing my details will be used to attempt to get my private data scrubbed from their mailing lists.
+
 https://www.spam.org/report
+https://spamcop.net
 
 https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business
 
 https://reportfraud.ftc.gov/#/
 
-Your company made the open source list of bad recruiters:  
+The open source list of bad recruiters:  
 https://github.com/lcreed/FilterBadRecruiters
