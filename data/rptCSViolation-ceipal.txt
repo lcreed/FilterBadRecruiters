@@ -20,3 +20,7 @@ info2@artech.com,abuse@artech.com,legal@artech.com,pr@artech.com,employeeservice
 
 softpath
 siteabuse@monster.com,abuse@monster.com,support@monster.com,legal@monster.com,compliance@monster.com,info@softpath.net,abuse@softpath.net,legal@softpath.net
+
+abuse@outlook.com
+
+contact@cs511.temp.domains,info@thoughtwavesoft.com
