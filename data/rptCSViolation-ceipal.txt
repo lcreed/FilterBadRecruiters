@@ -24,3 +24,6 @@ siteabuse@monster.com,abuse@monster.com,support@monster.com,legal@monster.com,co
 abuse@outlook.com
 
 contact@cs511.temp.domains,info@thoughtwavesoft.com
+
+Ceipal:
+abuse@ceipal.com
