@@ -50,7 +50,7 @@
          so if you don't want to use it, just enter a sting that will never be matched.  I.e. 
          viaDomains: ["$QXUGW5#45AuuT9*X"],
         */
-        viaDomains: ["jobopportunityforyou", "ceipal", "bullhornmail", "jobdiva", "joboppforyou","conrep","rediff"],
+        viaDomains: ["jobopportunityforyou", "ceipal", "bullhornmail", "jobdiva", "joboppforyou","conrep","rediff","sendgrid"],
     };
 
     /* ----------------------------------------------------------------------------------------------------------------------
